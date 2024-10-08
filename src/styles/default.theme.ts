@@ -1,9 +1,9 @@
 export const theme = {
   colors: {
       primary: {
-          main: '#004C97',
-          light: '#378CDF',
-          dark: '#002549'
+          main: '#20134B',
+          dark: '#644FC1',
+          light: '#9E8CFC'
       },
 
       secundary: {
@@ -15,6 +15,8 @@ export const theme = {
       highEmphasis: '#1E2732',
       mediumEmphasis: '#545454',
       lowEmphasis: '#949494',
+
+      white: '#FCFCFC',
 
       surface: '#FFFFFF',
       divider: '#E6EAED',

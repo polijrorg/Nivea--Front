@@ -1,5 +1,5 @@
 // import ButterFlyIcon from 'public/icons/butterflyIcon';
-import { Text, View } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 
 type BigTextProps ={
@@ -7,86 +7,93 @@ type BigTextProps ={
   fontWeight?: number;
   fontDecoration?: string;
 }
-type IconProps = {
-  height: string;
-  width: string;
+
+type CheckProps = {
+  isChecked: boolean;
 }
 
 export const Wrapper = styled(View)`
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   background: ${({ theme }) => theme.colors.primary.main };
+  padding-top: 80px;
 `;
-
-export const IconDiv = styled(View)`
-  display: flex;
+export const SubDiv = styled(View)`
   align-items: center;
-  flex-direction: row;
   justify-content: space-between;
-  gap: 8px;
-`;
-export const TextDiv = styled(View)`
-  display: flex;
-  align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  width: 312px;
+  height: auto;
+  padding: 16px;
+  padding-left: 8px;
 `;
-
-
-export const StyledICon = styled.Image<IconProps>`
-  height: ${({height}) => height};
-  width: ${({width}) => width};
-`;
-// export const StyledICon2 = styled(ButterFlyIcon)`
-//   height: 58px;
-//   width: 60px;
-// `;
-export const Header = styled(Text)`
-  color: ${({ theme }) => theme.colors.primary.light };
+export const StyledLink = styled(Text)`
+  color: #5746AF;
   text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
   font-family: 'Poppins-Regular';
-  font-size: 20px;
+  font-size: 9px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
+  text-decoration-line: underline;
+`;
+
+export const Header = styled(Text)`
   display: flex;
-  width: 264px;
+  width: 320px;
   height: auto;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
-  padding-bottom: 16px;
-  padding-top: 24px;
-`;
-
-export const SmallText = styled.Text<{ paddingSize?: string }>`
-  width: 264px;
-  height: auto;
-  flex-shrink: 0;
-  color: rgba(252, 252, 252, 0.70);
+  color: #FCFCFC;
   text-align: center;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Poppins-Regular';
-  font-size: 8px;
+  font-family: Poppins;
+  font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding-bottom: ${({ paddingSize }) => paddingSize || '28px' };
+  padding-bottom: 16px;
+  padding-top: 16px;
 `;
-export const BigText = styled.Text<BigTextProps>`
-  /* width: 260px; */
-  /* flex-direction: column; */
+
+export const SmallText = styled.Text`
+  width: 264px;
   height: auto;
-  padding-top: 20px;
+  flex-shrink: 0;
+  color: rgba(252, 252, 252, 0.50);
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Poppins;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 60px;
+`;
+
+export const CadastroText = styled.Text<BigTextProps>`
+  width: 260px;
+  position: absolute;
+  padding-bottom: 48px;
+  height: auto;
+  bottom: 0px;
   color: ${({ color }) => color};
   text-align: center;
   font-family: 'Poppins-Regular';
-  font-size: 16px;
+  font-size: 12px;
   font-weight: ${({fontWeight}) => fontWeight || 400};
   line-height: normal;
   text-decoration-line: ${({fontDecoration}) => fontDecoration || 'none'};
   
+`;
+export const TermosText = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center;
+  color: #FCFCFC80;
 `;
 export const StyledImage = styled.Image`
   width: 328px;
